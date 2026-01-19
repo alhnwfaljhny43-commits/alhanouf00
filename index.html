@@ -6,31 +6,24 @@
 <title>وَشيج</title>
 
 <style>
-:root {
-  --bg-color: #f5f5f5;
-  --text-color: #000;
-  --main-color: #1f3d2b;
-  --section-bg: #ffffff;
-}
-
-body.dark {
-  --bg-color: #121212;
-  --text-color: #eaeaea;
-  --section-bg: #1e1e1e;
-}
-
 body {
   font-family: Tahoma;
   margin: 0;
   direction: rtl;
-  background: var(--bg-color);
-  color: var(--text-color);
-  transition: 0.3s;
+  background: #f5f5f5;
+  color: #000;
+  font-size: 16px;
+}
+
+/* الوضع الليلي */
+body.dark {
+  background: #121212;
+  color: #eaeaea;
 }
 
 /* الهيدر */
 header {
-  background: var(--main-color);
+  background: #1f3d2b;
   color: white;
   padding: 15px;
   display: flex;
@@ -47,7 +40,7 @@ header {
 /* القائمة */
 nav {
   display: none;
-  background: var(--main-color);
+  background: #1f3d2b;
 }
 
 nav a {
@@ -58,20 +51,15 @@ nav a {
   border-top: 1px solid #ffffff33;
 }
 
-nav a:hover {
-  background: #2f5d44;
-}
-
-/* الأزرار */
+/* أزرار التحكم */
 .controls {
   text-align: center;
-  margin: 20px;
+  margin: 15px;
 }
 
 .controls button {
   padding: 8px 12px;
   margin: 5px;
-  font-size: 16px;
   cursor: pointer;
 }
 
@@ -79,14 +67,11 @@ nav a:hover {
 section {
   padding: 40px;
   text-align: center;
-  background: var(--section-bg);
-  margin: 20px;
-  border-radius: 8px;
 }
 
-/* الفوتر */
+/* الفوتر الاحترافي */
 footer {
-  background: var(--main-color);
+  background: #1f3d2b;
   color: #ffffffcc;
   padding: 25px 15px;
   margin-top: 40px;
@@ -95,8 +80,8 @@ footer {
 .footer-links {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 15px;
+  flex-wrap: wrap;
   margin-bottom: 15px;
 }
 
@@ -104,10 +89,6 @@ footer {
   color: #ffffffcc;
   text-decoration: none;
   font-size: 14px;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
 }
 
 .footer-copy {
@@ -120,21 +101,21 @@ footer {
 let fontSize = 16;
 
 function toggleMenu() {
-  var menu = document.getElementById("menu");
+  const menu = document.getElementById("menu");
   menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
 
-function increaseText() {
+function bigger() {
   fontSize += 2;
   document.body.style.fontSize = fontSize + "px";
 }
 
-function decreaseText() {
+function smaller() {
   fontSize -= 2;
   document.body.style.fontSize = fontSize + "px";
 }
 
-function toggleDarkMode() {
+function darkMode() {
   document.body.classList.toggle("dark");
 }
 </script>
@@ -149,17 +130,17 @@ function toggleDarkMode() {
 </header>
 
 <nav id="menu">
-  <a href="about.html">من نحن</a>
-  <a href="services.html">ماذا نقدم</a>
-  <a href="ai.html">الذكاء الاصطناعي</a>
-  <a href="articles.html">المقالات</a>
-  <a href="contact.html">تواصل معنا</a>
+  <a href="#">من نحن</a>
+  <a href="#">ماذا نقدم</a>
+  <a href="#">الذكاء الاصطناعي</a>
+  <a href="#">المقالات</a>
+  <a href="#">تواصل معنا</a>
 </nav>
 
 <div class="controls">
-  <button onclick="increaseText()">تكبير النص +</button>
-  <button onclick="decreaseText()">تصغير النص −</button>
-  <button onclick="toggleDarkMode()">🌙 وضع ليلي</button>
+  <button onclick="bigger()">تكبير النص +</button>
+  <button onclick="smaller()">تصغير النص −</button>
+  <button onclick="darkMode()">🌙 وضع ليلي</button>
 </div>
 
 <section>
@@ -168,27 +149,18 @@ function toggleDarkMode() {
 </section>
 
 <footer>
-
-  <!-- خريطة الموقع -->
   <div class="footer-links">
-    <a href="index.html">الرئيسية</a>
-    <a href="about.html">من نحن</a>
-    <a href="services.html">ماذا نقدم</a>
-    <a href="ai.html">الذكاء الاصطناعي</a>
-    <a href="articles.html">المقالات</a>
-    <a href="contact.html">تواصل معنا</a>
+    <a href="#">الرئيسية</a>
+    <a href="#">من نحن</a>
+    <a href="#">الخدمات</a>
+    <a href="#">المقالات</a>
+    <a href="#">تواصل معنا</a>
   </div>
 
-  <!-- الحقوق -->
   <div class="footer-copy">
-    © <span id="year"></span> جميع الحقوق محفوظة وَشيج
+    © جميع الحقوق محفوظة وَشيج
   </div>
-
 </footer>
-
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>
